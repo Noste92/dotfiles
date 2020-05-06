@@ -42,3 +42,7 @@
 
 [ -f "$HOME/.config/shortcutrc.sh" ] && source "$HOME/.config/shortcutrc.sh"
 [ -f "$HOME/.config/aliasrc.sh" ] && source "$HOME/.config/aliasrc.sh"
+
+if which starship &>/dev/null; then
+  eval "$(starship init bash)"
+fi
