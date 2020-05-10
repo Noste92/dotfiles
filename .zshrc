@@ -5,3 +5,9 @@
 if which starship &>/dev/null; then
     eval "$(starship init zsh)"
 fi
+
+if which tmux &>/dev/null; then
+  if [ "$TMUX" = "" ]; then
+      tmux;
+  fi
+fi
