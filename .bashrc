@@ -10,19 +10,14 @@ if [[ -f /etc/bash_completion ]]; then
   . /etc/bash_completion
 fi
 
-# BASH HISTORY 
-# make multiple shells share the same history file
-export HISTSIZE=1000            # bash history will save N commands
-export HISTFILESIZE=${HISTSIZE} # bash will remember N commands
-export HISTCONTROL=ignoreboth   # ingore duplicates and spaces
-export HISTIGNORE='&:ls:ll:la:cd:exit:clear:history'
-
+[ -f "$HOME/.config/history.sh" ] && source "$HOME/.config/history.sh"
 [ -f "$HOME/.config/shortcutrc.sh" ] && source "$HOME/.config/shortcutrc.sh"
 [ -f "$HOME/.config/aliasrc.sh" ] && source "$HOME/.config/aliasrc.sh"
 
 if which starship &>/dev/null; then
   eval "$(starship init bash)"
 fi
+
 if which tmux &>/dev/null; then
   if [ "$TMUX" = "" ]; then
       tmux;
