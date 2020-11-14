@@ -1,4 +1,6 @@
-setopt appendhistory
+if which setopt &>/dev/null; then
+	setopt appendhistory
+fi
 export SAVEHIST=10
 export HISTFILE=~/.histfile
 export HISTSIZE=1000 

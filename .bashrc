@@ -13,6 +13,7 @@ fi
 [ -f "$HOME/.config/history.sh" ] && source "$HOME/.config/history.sh"
 [ -f "$HOME/.config/shortcutrc.sh" ] && source "$HOME/.config/shortcutrc.sh"
 [ -f "$HOME/.config/aliasrc.sh" ] && source "$HOME/.config/aliasrc.sh"
+[ -f "$HOME/.config/completionrc.sh" ] && source "$HOME/.config/completionrc.sh"
 
 if which starship &>/dev/null; then
   eval "$(starship init bash)"
